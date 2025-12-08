@@ -1,5 +1,6 @@
 package OPGorchester;
 
+<<<<<<< HEAD
 public class StrunovyNastroj extends Nastroje {
     int pocetStrun;
     String ladenie;
@@ -9,6 +10,16 @@ public class StrunovyNastroj extends Nastroje {
         this.ladenie = ladenie;
     }
 
+=======
+public class StrunovyNastroj {
+    public int pocetStrun;
+    public String ladenie;
+
+    public StrunovyNastroj(int pocetStrun, String ladenie){
+        setPocetStrun(pocetStrun);
+        setLadenie(ladenie);
+    }
+>>>>>>> c595c2dc4e31988c1fc1c7021a23fe0f995885d5
     public int getPocetStrun() {
         return pocetStrun;
     }
@@ -16,6 +27,7 @@ public class StrunovyNastroj extends Nastroje {
     public String getLadenie() {
         return ladenie;
     }
+<<<<<<< HEAD
     
     public void setPocetStrun(int pocetStrun) {
         if (pocetStrun > 0) {
@@ -31,10 +43,25 @@ public class StrunovyNastroj extends Nastroje {
         } else {
             this.ladenie = ladenie;
         }
+=======
+
+    public void setPocetStrun(int pocetStrun) {
+        this.pocetStrun = pocetStrun;
+    }
+
+    public void setLadenie(String ladenie) {
+        this.ladenie = ladenie;
+>>>>>>> c595c2dc4e31988c1fc1c7021a23fe0f995885d5
     }
 
     @Override
     public String toString() {
+<<<<<<< HEAD
         return "StrunovyNastroj [" + super.toString() + ", pocetStrun=" + pocetStrun + ", ladenie=" + ladenie + "]";
     }
 }
+=======
+        return "StrunovyNastroj [pocetStrun=" + pocetStrun + ", ladenie=" + ladenie + "]";
+    }
+}
+>>>>>>> c595c2dc4e31988c1fc1c7021a23fe0f995885d5
