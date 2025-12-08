@@ -1,10 +1,10 @@
 package OPGorchester;
 
 public class Hrac{
-    public String meno;
-    public String priezvisko;
-    public String nastroj;
-    public int hodinovaSadzba;
+    private String meno;
+    private String priezvisko;
+    private String nastroj;
+    private int hodinovaSadzba;
     public Hrac(String meno, String priezvisko, String nastroj, int hodinovaSadzba){
         setMeno(meno);
         setPriezvisko(priezvisko);

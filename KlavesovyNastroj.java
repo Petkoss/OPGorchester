@@ -1,7 +1,7 @@
 package OPGorchester;
 
 public class KlavesovyNastroj extends Nastroje{
-    int pocetKlavesov;
+    private int pocetKlavesov;
     public KlavesovyNastroj(String druh, double cena, String zvuk, int pocet, int pocetKlavesov){
         super(druh, cena, zvuk, pocet);
         setPocetKlavesov(pocetKlavesov);
