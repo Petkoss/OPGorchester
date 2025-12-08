@@ -38,8 +38,4 @@ public class DychovyNastroj extends Nastroje {
     public String toString() {
         return "DychovyNastroj [" + super.toString() + ", pocetDier=" + pocetDier + ", ladenie=" + ladenie + "]";
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 1f97f212d0fba0b43e085ef6f157a3ba02a9ea83
