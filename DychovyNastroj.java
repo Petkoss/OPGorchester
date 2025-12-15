@@ -1,6 +1,6 @@
 package OPGorchester;
 
-public class DychovyNastroj extends Nastroje {
+public class DychovyNastroj extends Nastroj {
     private int pocetDier;
     private String ladenie;
     public DychovyNastroj(String druh, double cena, String zvuk, int pocet, int pocetDier, String ladenie) {

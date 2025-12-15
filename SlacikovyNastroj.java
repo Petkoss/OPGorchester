@@ -1,6 +1,6 @@
 package OPGorchester;
 
-public class SlacikovyNastroj extends Nastroje {
+public class SlacikovyNastroj extends Nastroj {
     private String sekcia;
 
     public SlacikovyNastroj(String druh, double cena, String zvuk, int pocet, String sekcia) {

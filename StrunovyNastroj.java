@@ -1,12 +1,15 @@
 package OPGorchester;
 
-public class StrunovyNastroj extends Nastroje {
+public class StrunovyNastroj extends Nastroj {
     private int pocetStrun;
     private String ladenie;
     public StrunovyNastroj(String druh, double cena, String zvuk, int pocet, int pocetStrun, String ladenie) {
         super(druh, cena, zvuk, pocet);
         setPocetStrun(pocetStrun);
         setLadenie(ladenie);
+    }
+    public StrunovyNastroj(String[] data) {
+        super(data);
     }
 
     public int getPocetStrun() { // oprava
@@ -36,5 +39,12 @@ public class StrunovyNastroj extends Nastroje {
     @Override
     public String toString() {
         return "StrunovyNastroj [" + super.toString() + ", pocetStrun=" + pocetStrun + ", ladenie=" + ladenie + "]";
+    }
+
+    @Override
+    public void load(String[] data) {
+        super.load(data);
+        pocetStrun = Integer.parseInt(data[5]);
+        ladenie = data[6];
     }
 }

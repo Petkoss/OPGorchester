@@ -1,6 +1,6 @@
 package OPGorchester;
 
-public class RytmickyNastroj extends Nastroje{
+public class RytmickyNastroj extends Nastroj{
     private int pocetZvukov;
 
     public RytmickyNastroj(String druh, double cena, String zvuk, int pocet, int pocetZvukov){
