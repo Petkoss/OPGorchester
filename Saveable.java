@@ -2,5 +2,5 @@ package OPGorchester;
 
 public interface Saveable {
     public String save();
-    public void load(String data);
+    public void load(String [] data);
 }
