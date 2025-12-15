@@ -20,7 +20,7 @@ public class Nastroje implements Saveable {
         druh = data[1];
         zvuk = data[3];
         cena = Double.parseDouble(data[2]);
-        pocet = Integer.parseInt(data[4])
+        pocet = Integer.parseInt(data[4]);
     }
 
     public String getDruh() {
