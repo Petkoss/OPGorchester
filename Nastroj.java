@@ -12,10 +12,6 @@ public class Nastroj implements Saveable {
         setZvuk(zvuk);
         setPocet(pocet);
     }
-<<<<<<< HEAD:Nastroje.java
-    public Nastroje(String[] data) {
-        load(data);
-=======
     public Nastroj(String [] data){
         load(data);
     }
@@ -25,7 +21,6 @@ public class Nastroj implements Saveable {
         zvuk = data[3];
         cena = Double.parseDouble(data[2]);
         pocet = Integer.parseInt(data[4]);
->>>>>>> 03f5b9c9e96b4cbeda1598beafd72d15f0fc353f:Nastroj.java
     }
     
 
