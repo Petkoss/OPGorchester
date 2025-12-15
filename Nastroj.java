@@ -1,19 +1,31 @@
 package OPGorchester;
 
-public class Nastroje implements Saveable {
+public class Nastroj implements Saveable {
     private String druh;
     private double cena;
     private String zvuk;
     private int pocet;
 
-    public Nastroje(String druh, double cena, String zvuk, int pocet) {
+    public Nastroj(String druh, double cena, String zvuk, int pocet) {
         setDruh(druh);
         setCena(cena);
         setZvuk(zvuk);
         setPocet(pocet);
     }
+<<<<<<< HEAD:Nastroje.java
     public Nastroje(String[] data) {
         load(data);
+=======
+    public Nastroj(String [] data){
+        load(data);
+    }
+    @Override
+    public void load(String[] data) {
+        setDruh(data[1]);
+        zvuk = data[3];
+        cena = Double.parseDouble(data[2]);
+        pocet = Integer.parseInt(data[4]);
+>>>>>>> 03f5b9c9e96b4cbeda1598beafd72d15f0fc353f:Nastroj.java
     }
     
 

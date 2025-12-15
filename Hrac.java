@@ -3,9 +3,9 @@ package OPGorchester;
 public class Hrac implements Saveable {
     private String meno;
     private String priezvisko;
-    private Nastroje nastroje;
+    private Nastroj nastroje;
     private int hodinovaSadzba;
-    public Hrac(String meno, String priezvisko, Nastroje nastroje, int hodinovaSadzba){
+    public Hrac(String meno, String priezvisko, Nastroj nastroje, int hodinovaSadzba){
         setMeno(meno);
         setPriezvisko(priezvisko);
         setNastroje(nastroje);
@@ -20,7 +20,7 @@ public class Hrac implements Saveable {
     public String getPriezvisko() {
         return priezvisko;
     }
-    public Nastroje getNastroje() {
+    public Nastroj getNastroje() {
         return nastroje;
     }
     public int getHodinovaSadzba() {
@@ -32,7 +32,7 @@ public class Hrac implements Saveable {
     public void setPriezvisko(String priezvisko) {
         this.priezvisko = priezvisko;
     }
-    public void setNastroje(Nastroje nastroje) {
+    public void setNastroje(Nastroj nastroje) {
         this.nastroje = nastroje;
     }
     public void setHodinovaSadzba(int hodinovaSadzba) {
