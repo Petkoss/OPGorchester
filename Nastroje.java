@@ -12,16 +12,10 @@ public class Nastroje implements Saveable {
         setZvuk(zvuk);
         setPocet(pocet);
     }
-    public Nastroje(String[] params) {
-        load(params);
+    public Nastroje(String[] data) {
+        load(data);
     }
-    @Override
-    public void load(String[] data) {
-        druh = data[1];
-        zvuk = data[3];
-        cena = Double.parseDouble(data[2]);
-        pocet = Integer.parseInt(data[4])
-    }
+    
 
     public String getDruh() {
         return druh;
@@ -64,5 +58,12 @@ public class Nastroje implements Saveable {
     public String save() {
         return "";
     } 
+    @Override
+    public void load(String[] data) {
+        setDruh(data[1]);
+        zvuk = data[3];
+        cena = Double.parseDouble(data[2]);
+        pocet = Integer.parseInt(data[4]);
+    }
     
 }
