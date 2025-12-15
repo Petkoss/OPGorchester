@@ -11,7 +11,7 @@ public class Hrac implements Saveable {
         setNastroje(nastroje);
         setHodinovaSadzba(hodinovaSadzba);
     }
-    public hrac(String[] params){
+    public Hrac(String[] params){
         load(params);
     }
     public String getMeno() {

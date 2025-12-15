@@ -59,7 +59,7 @@ public class Nastroje implements Saveable {
         return "";
     } 
     @Override
-    public void load(String[] data) {
+    public void load(String [] data) {
         setDruh(data[1]);
         zvuk = data[3];
         cena = Double.parseDouble(data[2]);

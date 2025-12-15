@@ -12,6 +12,7 @@ public class KlavesovyNastroj extends Nastroje{
     public void setPocetKlavesov(int pocetKlavesov) {
         this.pocetKlavesov = pocetKlavesov;
     }
+    
     @Override
     public String toString() {
         return "KlavesovyNastroj [pocetKlavesov=" + pocetKlavesov + "]";
