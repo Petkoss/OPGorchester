@@ -11,6 +11,9 @@ public class Hrac{
         setNastroj(nastroj);
         setHodinovaSadzba(hodinovaSadzba);
     }
+    public hrac(String[] params){
+        load(params);
+    }
     public String getMeno() {
         return meno;
     }
@@ -38,5 +41,10 @@ public class Hrac{
     @Override
     public String toString() {
         return "Hrac [meno=" + meno + ", priezvisko=" + priezvisko + ", nastroj=" + nastroj + ", hodinovaSadzba=" + hodinovaSadzba + "]";
+    }
+
+    public void load(String[] data) {
+        meno = data[1];
+
     }
 }

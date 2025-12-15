@@ -1,6 +1,6 @@
 package OPGorchester;
 
-public class Nastroje {
+public class Nastroje implements Saveable {
     private String druh;
     private double cena;
     private String zvuk;
@@ -11,6 +11,16 @@ public class Nastroje {
         setCena(cena);
         setZvuk(zvuk);
         setPocet(pocet);
+    }
+    public Nastroje(String[] params) {
+        load(params);
+    }
+    @Override
+    public void load(String[] data) {
+        druh = data[1];
+        zvuk = data[3];
+        cena = Double.parseDouble(data[2]);
+        pocet = Integer.parseInt(data[4])
     }
 
     public String getDruh() {
@@ -49,4 +59,10 @@ public class Nastroje {
     public String toString() {
         return "Nastroje [druh=" + druh + ", cena=" + cena + ", zvuk=" + zvuk + ", pocet=" + pocet + "]";
     }
+
+    @Override 
+    public String save() {
+        return "";
+    } 
+    
 }
