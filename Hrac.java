@@ -2,8 +2,8 @@ public class Hrac implements Saveable {
     private String meno;
     private String priezvisko;
     private Nastroj nastroje;
-    private int hodinovaSadzba;
-    public Hrac(String meno, String priezvisko, Nastroj nastroje, int hodinovaSadzba){
+    private double hodinovaSadzba;
+    public Hrac(String meno, String priezvisko, Nastroj nastroje, double hodinovaSadzba){
         setMeno(meno);
         setPriezvisko(priezvisko);
         setNastroje(nastroje);
@@ -21,7 +21,7 @@ public class Hrac implements Saveable {
     public Nastroj getNastroje() {
         return nastroje;
     }
-    public int getHodinovaSadzba() {
+    public double getHodinovaSadzba() {
         return hodinovaSadzba;
     }
     public void setMeno(String meno) {
@@ -33,7 +33,7 @@ public class Hrac implements Saveable {
     public void setNastroje(Nastroj nastroje) {
         this.nastroje = nastroje;
     }
-    public void setHodinovaSadzba(int hodinovaSadzba) {
+    public void setHodinovaSadzba(double hodinovaSadzba) {
         this.hodinovaSadzba = hodinovaSadzba;
     }
     @Override
@@ -46,8 +46,7 @@ public class Hrac implements Saveable {
         meno = data[1];
         priezvisko = data[2];
         nastroje = null; 
-        hodinovaSadzba = Integer.parseInt(data[4]);
-
+        hodinovaSadzba = Double.parseDouble(data[4]);
     }
     @Override
     public String save() {
