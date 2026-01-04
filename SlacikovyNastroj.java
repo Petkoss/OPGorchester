@@ -1,11 +1,13 @@
-package OPGorchester;
-
 public class SlacikovyNastroj extends Nastroj {
     private String sekcia;
 
     public SlacikovyNastroj(String druh, double cena, String zvuk, int pocet, String sekcia) {
         super(druh, cena, zvuk, pocet);
         setSekcia(sekcia);
+    }
+    public SlacikovyNastroj(String[] data) {
+        super(data);
+        load(data);
     }
 
     public String getSekcia() {
@@ -19,5 +21,13 @@ public class SlacikovyNastroj extends Nastroj {
     @Override
     public String toString() {
         return "SlacikovyNastroj [" + super.toString() + ", sekcia=" + sekcia + "]";
+    }
+    
+    @Override
+    public void load(String[] data) {
+        super.load(data);
+        if (data.length > 5) {
+            sekcia = data[data.length - 1]; 
+        }
     }
 }

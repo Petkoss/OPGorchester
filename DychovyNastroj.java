@@ -1,5 +1,3 @@
-package OPGorchester;
-
 public class DychovyNastroj extends Nastroj {
     private int pocetDier;
     private String ladenie;
@@ -7,6 +5,10 @@ public class DychovyNastroj extends Nastroj {
         super(druh, cena, zvuk, pocet);
         setPocetDier(pocetDier);
         setLadenie(ladenie);
+    }
+    public DychovyNastroj(String[] data) {
+        super(data);
+        load(data);
     }
 
     public String getLadenie() {
@@ -37,5 +39,12 @@ public class DychovyNastroj extends Nastroj {
     @Override
     public String toString() {
         return "DychovyNastroj [" + super.toString() + ", pocetDier=" + pocetDier + ", ladenie=" + ladenie + "]";
+    }
+    
+    @Override
+    public void load(String[] data) {
+        super.load(data);
+        pocetDier = Integer.parseInt(data[5]);
+        ladenie = data[6];
     }
 }

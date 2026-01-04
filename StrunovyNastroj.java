@@ -1,5 +1,3 @@
-package OPGorchester;
-
 public class StrunovyNastroj extends Nastroj {
     private int pocetStrun;
     private String ladenie;

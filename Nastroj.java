@@ -1,5 +1,3 @@
-package OPGorchester;
-
 public class Nastroj implements Saveable {
     private String druh;
     private double cena;

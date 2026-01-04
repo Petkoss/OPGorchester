@@ -1,5 +1,3 @@
-package OPGorchester;
-
 public class Hrac implements Saveable {
     private String meno;
     private String priezvisko;
@@ -50,5 +48,9 @@ public class Hrac implements Saveable {
         nastroje = null; 
         hodinovaSadzba = Integer.parseInt(data[4]);
 
+    }
+    @Override
+    public String save() {
+        return "u," + meno + "," + priezvisko + "," + (nastroje != null ? nastroje.getDruh() : "") + "," + hodinovaSadzba;
     }
 }
