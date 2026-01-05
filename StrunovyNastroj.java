@@ -42,7 +42,7 @@ public class StrunovyNastroj extends Nastroj {
     @Override
     public void load(String[] data) {
         super.load(data);
-        pocetStrun = Integer.parseInt(data[5]);
-        ladenie = data[6];
+        setPocetStrun(Integer.parseInt(data[5]));
+        setLadenie(data[6]);
     }
 }

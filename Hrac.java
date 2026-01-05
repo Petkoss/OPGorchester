@@ -25,16 +25,28 @@ public class Hrac implements Saveable {
         return hodinovaSadzba;
     }
     public void setMeno(String meno) {
-        this.meno = meno;
+        if (meno.equals("")) {
+            System.out.println("Meno nemoze byt prazdne");
+        } else {
+            this.meno = meno;
+        }
     }
     public void setPriezvisko(String priezvisko) {
-        this.priezvisko = priezvisko;
+        if (priezvisko.equals("")) {
+            System.out.println("Priezvisko nemoze byt prazdne");
+        } else {
+            this.priezvisko = priezvisko;
+        }
     }
     public void setNastroje(Nastroj nastroje) {
         this.nastroje = nastroje;
     }
     public void setHodinovaSadzba(double hodinovaSadzba) {
-        this.hodinovaSadzba = hodinovaSadzba;
+        if (hodinovaSadzba < 0) {
+            System.out.println("Hodinova sadzba nemoze byt zaporna");
+        } else {
+            this.hodinovaSadzba = hodinovaSadzba;
+        }
     }
     @Override
     public String toString() {
@@ -43,11 +55,12 @@ public class Hrac implements Saveable {
 
     @Override
     public void load(String[] data) {
-        meno = data[1];
-        priezvisko = data[2];
+        setMeno(data[1]);
+        setPriezvisko(data[2]);
         nastroje = null; 
-        hodinovaSadzba = Double.parseDouble(data[4]);
+        setHodinovaSadzba(Double.parseDouble(data[4]));
     }
+    
     @Override
     public String save() {
         return "u," + meno + "," + priezvisko + "," + (nastroje != null ? nastroje.getDruh() : "") + "," + hodinovaSadzba;

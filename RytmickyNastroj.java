@@ -13,7 +13,11 @@ public class RytmickyNastroj extends Nastroj{
         return pocetZvukov;
     }
     public void setPocetZvukov(int pocetZvukov) {
-        this.pocetZvukov = pocetZvukov;
+        if (pocetZvukov > 0) {
+            this.pocetZvukov = pocetZvukov;
+        } else {
+            System.out.println("Pocet zvukov musi byt najmenej 1");
+        }
     }
     @Override
     public String toString() {
@@ -23,6 +27,6 @@ public class RytmickyNastroj extends Nastroj{
     @Override
     public void load(String[] data) {
         super.load(data);
-        pocetZvukov = Integer.parseInt(data[5]);
+        setPocetZvukov(Integer.parseInt(data[5]));
     }
 }

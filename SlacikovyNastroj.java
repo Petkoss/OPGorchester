@@ -15,7 +15,11 @@ public class SlacikovyNastroj extends Nastroj {
     }
 
     public void setSekcia(String sekcia) {
-        this.sekcia = sekcia;
+        if (sekcia.equals("")) {
+            System.out.println("Sekcia nemoze byt prazdna");
+        } else {
+            this.sekcia = sekcia;
+        }
     }
 
     @Override
@@ -27,7 +31,7 @@ public class SlacikovyNastroj extends Nastroj {
     public void load(String[] data) {
         super.load(data);
         if (data.length > 5) {
-            sekcia = data[data.length - 1]; 
+            setSekcia(data[data.length - 1]); 
         }
     }
 }

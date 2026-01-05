@@ -16,9 +16,9 @@ public class Nastroj implements Saveable {
     @Override
     public void load(String[] data) {
         setDruh(data[1]);
-        zvuk = data[3];
-        cena = Double.parseDouble(data[2]);
-        pocet = Integer.parseInt(data[4]);
+        setCena(Double.parseDouble(data[2]));
+        setZvuk(data[3]);
+        setPocet(Integer.parseInt(data[4]));
     }
     
 
@@ -39,19 +39,35 @@ public class Nastroj implements Saveable {
     }
 
     public void setDruh(String druh) {
-        this.druh = druh;
+        if (druh.equals("")) {
+            System.out.println("Druh nemoze byt prazdny");
+        } else {
+            this.druh = druh;
+        }
     }
 
     public void setCena(double cena) {
-        this.cena = cena;
+        if (cena < 0) {
+            System.out.println("Cena nemoze byt zaporna");
+        } else {
+            this.cena = cena;
+        }
     }
 
     public void setZvuk(String zvuk) {
-        this.zvuk = zvuk;
+        if (zvuk.equals("")) {
+            System.out.println("Zvuk nemoze byt prazdny");
+        } else {
+            this.zvuk = zvuk;
+        }
     }
     
     public void setPocet(int pocet) {
-        this.pocet = pocet;
+        if (pocet < 0) {
+            System.out.println("Pocet nemoze byt zaporny");
+        } else {
+            this.pocet = pocet;
+        }
     }
 
     @Override

@@ -12,7 +12,11 @@ public class KlavesovyNastroj extends Nastroj{
         return pocetKlavesov;
     }
     public void setPocetKlavesov(int pocetKlavesov) {
-        this.pocetKlavesov = pocetKlavesov;
+        if (pocetKlavesov > 0) {
+            this.pocetKlavesov = pocetKlavesov;
+        } else {
+            System.out.println("Pocet klavesov musi byt najmenej 1");
+        }
     }
 
     @Override
@@ -23,6 +27,6 @@ public class KlavesovyNastroj extends Nastroj{
     @Override
     public void load(String[] data) {
         super.load(data);
-        pocetKlavesov = Integer.parseInt(data[5]);
+        setPocetKlavesov(Integer.parseInt(data[5]));
     }
 }
