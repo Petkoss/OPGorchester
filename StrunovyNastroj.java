@@ -27,8 +27,8 @@ public class StrunovyNastroj extends Nastroj {
     }
 
     public void setLadenie(String ladenie) {
-        if (ladenie == "") {
-            System.out.println("Nemoze byt prazdny");;
+        if (ladenie.equals("")) {
+            System.out.println("Nemoze byt prazdny");
         } else {
             this.ladenie = ladenie;
         }

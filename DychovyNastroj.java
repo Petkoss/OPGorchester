@@ -19,10 +19,9 @@ public class DychovyNastroj extends Nastroj {
     }
 
     public void setLadenie(String ladenie) {
-        if (ladenie == "") {
+        if (ladenie.equals("")) {
             System.out.println("Nemoze byt prazdne");
-        }
-        else {
+        } else {
             this.ladenie = ladenie;
         }
     }
