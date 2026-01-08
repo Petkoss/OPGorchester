@@ -39,6 +39,7 @@ public class Main {
             }
         }
         
+        //Priradenie nastrojov hracom
         for (int i = 0; i < hracList.size(); i++) {
             Hrac hrac = hracList.get(i);
             String hladanyNazov = nazvyNastrojov.get(i);
@@ -48,30 +49,43 @@ public class Main {
                     SlacikovyNastroj slacikovy = (SlacikovyNastroj) nastroj;
                     if (slacikovy.getSekcia().equals(hladanyNazov)) {
                         hrac.setNastroje(nastroj);
-                    } // lebo len slacikovynastroj ma getSekcia() ostatne maju getDruh()
+                        break;
+                    }
                 } else {
                     if (nastroj.getDruh().equals(hladanyNazov)) {
                         hrac.setNastroje(nastroj);
+                        break; 
                     }
                 }
             }
         }
         
-        System.out.println("--- NÁSTROJE ---");
-        for (Nastroj nastroj : nastrojList) {
-            System.out.println(nastroj);
+
+        System.out.println("---Zoznam hráčov---");
+        for (Hrac hrac : hracList) {
+            System.out.println(hrac.getMeno() + " " + hrac.getPriezvisko());
         }
         
-        System.out.println("\n--- HRÁČI ---");
-        for (int i = 0; i < hracList.size(); i++) {
-            Hrac hrac = hracList.get(i);
-            System.out.println("Hráč: " + hrac.getMeno() + " " + hrac.getPriezvisko());
-            if (hrac.getNastroje() != null) {
-                System.out.println("Nástroj hráča: " + hrac.getNastroje().getDruh());
-            } else {
-                System.out.println("Nástroj hráča: nebol nájdený");
-            }
-            System.out.println();
+        
+        System.out.println("\n---Databáza nástrojov---");
+        for (Nastroj nastroj : nastrojList) {
+            System.out.println("Druh: " + nastroj.getDruh() + ", Počet: " + nastroj.getPocet() + ", Cena: " + nastroj.getCena());
         }
+        
+        double celkovaCena = 0;
+        for (Nastroj nastroj : nastrojList) {
+            celkovaCena += nastroj.getPocet() * nastroj.getCena();
+        }
+        System.out.println("\n------");
+        System.out.println("Celková cena skladu: " + celkovaCena);
+        System.out.println("------");
+        
+        System.out.println("\n---Sklad hraj---");
+        for (Nastroj nastroj : nastrojList) {
+            for (int i = 0; i < nastroj.getPocet(); i++) {
+                System.out.print(nastroj.getZvuk() + " ");
+            }
+        }
+        System.out.println();
     }
 }
