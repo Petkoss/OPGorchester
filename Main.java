@@ -21,7 +21,7 @@ public class Main {
         ArrayList<String> nazvyNastrojov = new ArrayList<>();
         
         try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                new FileInputStream("skladNastrojov.txt"), "UTF-8"))) { //aby sa to citalo v UTF-8
+                new FileInputStream("OPGorchester/skladNastrojov.txt"), "UTF-8"))) { //aby sa to citalo v UTF-8
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -71,13 +71,13 @@ public class Main {
         }
         
 
-        System.out.println("=Zoznam hráčov=");
+        System.out.println("---Zoznam hráčov---");
         for (Hrac hrac : hracList) {
             System.out.println(hrac.getMeno() + " " + hrac.getPriezvisko());
         }
         
         
-        System.out.println("\n=Databáza nástrojov=");
+        System.out.println("\n---Databáza nástrojov---");
         for (Nastroj nastroj : nastrojList) {
             System.out.println("Druh: " + nastroj.getDruh() + ", Počet: " + nastroj.getPocet() + ", Cena: " + nastroj.getCena());
         }
@@ -88,7 +88,7 @@ public class Main {
         }
         System.out.println("Celková cena skladu: " + celkovaCena);
         
-        System.out.println("\n=Sklad hraj=");
+        System.out.println("\n---Sklad hraj---");
         for (Nastroj nastroj : nastrojList) {
             for (int i = 0; i < nastroj.getPocet(); i++) {
                 System.out.print(nastroj.getZvuk() + " ");
@@ -99,8 +99,8 @@ public class Main {
         // Vytvorenie Lode
         Lod lod = new Lod("hrrr-hrrr", 10000);
         
-        // Hromadný výpis "Akord" - všetky nástroje vrátane Lode vydajú zvuk
-        System.out.println("\n=Akord=");
+        // Hromadný výpis Akord
+        System.out.println("\n---Akord---");
         for (Nastroj nastroj : nastrojList) {
             System.out.print(nastroj.getZvuk() + " ");
         }
@@ -108,14 +108,14 @@ public class Main {
         System.out.println();
         
         // Hromadný výpis "Obsadenie orchestra" - Hráč – nástroj
-        System.out.println("\n=Obsadenie orchestra=");
+        System.out.println("\n---Obsadenie orchestra---");
         for (Hrac hrac : hracList) {
             String nazovNastroja = hrac.getNastroje() != null ? hrac.getNastroje().getDruh() : "žiadny";
             System.out.println(hrac.getMeno() + " " + hrac.getPriezvisko() + " – " + nazovNastroja);
         }
         
-        // Hromadný výpis "Orchester hraj" - Každý hráč zahrá na svoj nástroj
-        System.out.println("\n=Orchester hraj=");
+        // Hromadný výpis "Orchester hraj"
+        System.out.println("\n---Orchester hraj---");
         for (Hrac hrac : hracList) {
             if (hrac.getNastroje() != null) {
                 System.out.print(hrac.getNastroje().getZvuk() + " ");
@@ -123,8 +123,8 @@ public class Main {
         }
         System.out.println();
         
-        // Hromadný výpis "Krst lode" - Každý hráč na svoj nástroj a loď s nimi vydá zvuk. Loď sa spustí na vodu
-        System.out.println("\n=Krst lode=");
+        // Krst lode
+        System.out.println("\n---Krst lode---");
         for (Hrac hrac : hracList) {
             if (hrac.getNastroje() != null) {
                 System.out.print(hrac.getNastroje().getZvuk() + " ");
@@ -133,6 +133,15 @@ public class Main {
         lod.vydajZvuk();
         lod.setNaVode(true);
         System.out.println();
+        
+        // Výpis "Cena vystúpenia"
+        double sucetHodinovychSadziebHracov = 0;
+        for (Hrac hrac : hracList) {
+            sucetHodinovychSadziebHracov += hrac.getHodinovaSadzba();
+        }
+        double cenaVystupenia = pocetHodinVystupenia * sucetHodinovychSadziebHracov;
+        System.out.println("\n---Cena vystúpenia---");
+        System.out.println(cenaVystupenia + " (Počet hodín vystúpenia: " + pocetHodinVystupenia + " × Súčet hodinových sadzieb hráčov: " + sucetHodinovychSadziebHracov + ")");
         
         // Hromadná služba "Náklady vystúpenia" - súčet hodinových honorárov hudobníkov a odpisov nástrojov (2% z ceny nástroja)
         double sucetHodinovychSadzieb = 0;
@@ -153,7 +162,7 @@ public class Main {
         double odpisy = odpisyNastrojov * pocetHodinVystupenia;
         double nakladyVystupenia = honorare + odpisy;
         
-        System.out.println("\n=Náklady vystúpenia=");
+        System.out.println("\n---Náklady vystúpenia---");
         System.out.println("Honoráre hudobníkov: " + honorare + " (Počet hodín: " + pocetHodinVystupenia + " × Súčet hodinových sadzieb: " + sucetHodinovychSadzieb + ")");
         System.out.println("Odpisy nástrojov: " + odpisy + " (2% z ceny nástrojov × Počet hodín: " + pocetHodinVystupenia + ")");
         System.out.println("Celkové náklady vystúpenia: " + nakladyVystupenia);
